@@ -55,7 +55,7 @@ RUN git clone --depth 1 https://github.com/neologd/mecab-ipadic-neologd.git \
  && cd
 
 #mecab-ruby
-RUN curl -SL -o mecab-ruby-0.996.tar.gz 'https://doc-0s-74-docs.googleusercontent.com/docs/securesc/ha0ro937gcuc7l7deffksulhg5h7mbp1/iq02e61o05mbdgmiuug5e2vucfqinn9r/1534125600000/13553212398903315502/*/0B4y35FiV1wh7VUNlczBWVDZJbE0?e=download' \
+RUN curl -SL -o mecab-ruby-0.996.tar.gz 'https://doc-0s-74-docs.googleusercontent.com/docs/securesc/ha0ro937gcuc7l7deffksulhg5h7mbp1/5c1oc2njr4hbnj2m4nuefqdjt50qn9rd/1534816800000/13553212398903315502/*/0B4y35FiV1wh7VUNlczBWVDZJbE0?e=download' \
  && tar zxvf mecab-ruby-0.996.tar.gz \
  && cd mecab-ruby-0.996 \
  && sed -i 's%"ruby/version.h"%<version.h>%g' /mecab-ruby-0.996/MeCab_wrap.cpp \
