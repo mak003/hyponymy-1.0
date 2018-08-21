@@ -21,7 +21,7 @@ Linux OS のテストが終了しました。
 build : OK
   run : OK
 
-container構成までOKですが、中に調べてみると、少し手動でソースコードを修正する必要があります。
+container構成までOKですが、中に調べてみると、少し手動でソースコードを修正する必要があります。mecab-rubyのソースコードはgoogle driverに置いてあるので、windowsOSとLinuxOSのdownload　address毎日更新する必要がありますので、使うときにご注意ください。
 
 このツールを実行した時、ruby自身による正規表現のエラーが発生していますので、解決法待ち状態です。
 
