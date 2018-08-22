@@ -86,7 +86,6 @@ RUN sed -i -e "26s%'MeCab'%'/mecab-ruby-0.996/MeCab'%g" /ex-hyponymy-1.0/script/
 RUN sed -i -e "173s%#{char}%\#{char}%g" /ex-hyponymy-1.0/script/lib/del_mark.rb
 WORKDIR /ex-hyponymy-1.0/script
 RUN sed -i -e '1s%/bin/sh%/bin/bash%g' /ex-hyponymy-1.0/script/ex_hyponymy.sh
-
 RUN ls -l /bin/sh \
  && mv /bin/sh /bin/sh.orig \
  && ln -s /bin/bash /bin/sh
