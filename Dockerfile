@@ -81,7 +81,7 @@ RUN curl -SL -o ex-hyponymy-1.0-pecco.patch 'http://www.tkl.iis.u-tokyo.ac.jp/~y
  && make -f Makefile
 
 WORKDIR /ex-hyponymy-1.0/script/lib
-RUN sed -i -e "26s%'MeCab'%/'mecab-ruby-0.996/MeCab'%g" /ex-hyponymy-1.0/script/lib/mecab_part.rb 
+RUN sed -i -e "26s%'MeCab'%'/mecab-ruby-0.996/MeCab'%g" /ex-hyponymy-1.0/script/lib/mecab_part.rb 
 WORKDIR /ex-hyponymy-1.0/script
 RUN sed -i -e '1s%/bin/sh%/bin/bash%g' /ex-hyponymy-1.0/script/ex_hyponymy.sh
 
