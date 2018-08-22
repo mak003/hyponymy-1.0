@@ -23,12 +23,7 @@ build : OK
 
 container構成までOKですが、中に調べてみると、少し手動でソースコードを修正する必要があります。mecab-rubyのソースコードはgoogle driverに置いてあるので、windowsOSとLinuxOSのdownload　address毎日更新する必要がありますので、使うときにご注意ください。
 
-このツールを実行した時、ruby自身による正規表現のエラーが発生していますので、解決法待ち状態です。
-
-root/.rbenv/versions/1.8.7-p375/lib/ruby/1.8/jcode.rb:153: warning: character class has ]' without escape 
-/root/.rbenv/versions/1.8.7-p375/lib/ruby/1.8/jcode.rb:153:indelete!': premature end of regular expression: /[]+/ (RegexpError)
-
-
+このツールを実行した時、ruby自身による正規表現のエラーを特定し、解決しました。
 
 I builded a docker iamge from the container by following the instruction step by step, and uploaded it in docker hub. If you want to try, please 
 pull it from my docker hub repository.
