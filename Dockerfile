@@ -16,18 +16,11 @@ RUN echo 'eval "$(rbenv init -)"' >> /etc/profile.d/rbenv.sh
 RUN echo 'eval "$(rbenv init -)"' >> .bashrc
 RUN echo 'eval "$(rbenv init -)"' >> $HOME/.bash_profile
 RUN bash -l -c 'source $HOME/.bash_profile'
-# && echo 'export PATH="~/.rbenv/bin:$PATH"' >> ~/.bashrc \
 
 #ENV PATH $HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH
 RUN  CONFIGURE_OPTS='--disable-install-rodc' /root/.rbenv/bin/rbenv install 1.8.7-p375
 RUN rbenv global 1.8.7-p375 \
  && rbenv rehash
-# && /root/.rbenv/bin/rbenv global 1.8.7-p375
-#RUN bash -l -c 'gem update --system'
-#RUN bash -l -c 'gem update'
-# RUN bash -l -c 'gem install mecab'
-# && echo 'gem: --no-rdoc --no-ri' > /root/.gemrc \
-# && /root/.rbenv/shims/gem install mecab
 
 # mecab
 RUN curl -L -o mecab-0.996.tar.gz 'https://drive.google.com/uc?export=download&id=0B4y35FiV1wh7cENtOXlicTFaRUE' \
@@ -55,16 +48,13 @@ RUN git clone --depth 1 https://github.com/neologd/mecab-ipadic-neologd.git \
  && cd
 
 #mecab-ruby
-RUN curl -SL -o mecab-ruby-0.996.tar.gz 'https://doc-0s-74-docs.googleusercontent.com/docs/securesc/ha0ro937gcuc7l7deffksulhg5h7mbp1/5c1oc2njr4hbnj2m4nuefqdjt50qn9rd/1534816800000/13553212398903315502/*/0B4y35FiV1wh7VUNlczBWVDZJbE0?e=download' \
+RUN curl -SL -o mecab-ruby-0.996.tar.gz 'https://doc-0s-74-docs.googleusercontent.com/docs/securesc/ha0ro937gcuc7l7deffksulhg5h7mbp1/j9fej5ppppooc9pavf1ei28vs262pbee/1534910400000/13553212398903315502/*/0B4y35FiV1wh7VUNlczBWVDZJbE0?e=download' \
  && tar zxvf mecab-ruby-0.996.tar.gz \
  && cd mecab-ruby-0.996 \
  && sed -i 's%"ruby/version.h"%<version.h>%g' /mecab-ruby-0.996/MeCab_wrap.cpp \
  && ruby extconf.rb \
  && make \
  && make install
-
-# Gem-MECAB
-#RUN bash -l -c 'gem install mecab-modern'
 
 # ex-hyponymy-1.0
 RUN curl -SL -o ex-hyponymy-1.0.tar.gz 'https://alaginrc.nict.go.jp/hyponymy/src/ex-hyponymy-1.0.tar.gz' \
