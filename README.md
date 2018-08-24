@@ -25,12 +25,8 @@ container構成までOKですが、中に調べてみると、少し手動でソ
 
 このツールを実行した時、ruby自身による正規表現のエラーを特定し、解決しました。
 
-I builded a docker iamge from the container by following the instruction step by step, and uploaded it in docker hub. If you want to try, please 
-pull it from my docker hub repository.
-This is not good one, but it really works. 
-
-https://hub.docker.com/r/mak03/hyponymy-word2vec/
-
+I'm uploaded it in docker hub. If you want to try, please click this:
+https://hub.docker.com/r/mak03/hyponymy-1.0/
 
 
 予想の最低スペックは
