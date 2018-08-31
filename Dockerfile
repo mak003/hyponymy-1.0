@@ -17,7 +17,7 @@ RUN echo 'eval "$(rbenv init -)"' >> .bashrc
 RUN echo 'eval "$(rbenv init -)"' >> $HOME/.bash_profile
 RUN bash -l -c 'source $HOME/.bash_profile'
 
-#ENV PATH $HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH
+# ENV PATH $HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH
 RUN  CONFIGURE_OPTS='--disable-install-rodc' /root/.rbenv/bin/rbenv install 1.8.7-p375
 RUN rbenv global 1.8.7-p375 \
  && rbenv rehash
@@ -47,7 +47,7 @@ RUN git clone --depth 1 https://github.com/neologd/mecab-ipadic-neologd.git \
  && ./bin/install-mecab-ipadic-neologd -n -a -y \
  && cd
 
-#mecab-ruby
+# mecab-ruby
 RUN curl -SL -o mecab-ruby-0.996.tar.gz 'https://drive.google.com/uc?export=download&id=0B4y35FiV1wh7VUNlczBWVDZJbE0' \
  && tar zxvf mecab-ruby-0.996.tar.gz \
  && cd mecab-ruby-0.996 \
